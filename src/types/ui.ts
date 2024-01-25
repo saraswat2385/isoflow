@@ -143,6 +143,7 @@ export interface UiState {
   contextMenu: ContextMenu | null;
   zoom: number;
   scroll: Scroll;
+  showGrid: boolean;
   mouse: Mouse;
   rendererEl: HTMLDivElement | null;
   enableDebugTools: boolean;
@@ -155,6 +156,10 @@ export interface UiStateActions {
   setIconCategoriesState: (iconCategoriesState: IconCollectionState[]) => void;
   resetUiState: () => void;
   setMode: (mode: Mode) => void;
+  getMode: () => String;
+  setShowGrid: (showgrid: boolean) => void;
+  isShowGrid: () => boolean;
+  getEditorMode: () =>  keyof typeof EditorModeEnum;
   incrementZoom: () => void;
   decrementZoom: () => void;
   setIsMainMenuOpen: (isOpen: boolean) => void;

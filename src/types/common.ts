@@ -28,7 +28,8 @@ export type SlimMouseEvent = Pick<
 export const EditorModeEnum = {
   NON_INTERACTIVE: 'NON_INTERACTIVE',
   EXPLORABLE_READONLY: 'EXPLORABLE_READONLY',
-  EDITABLE: 'EDITABLE'
+  EDITABLE: 'EDITABLE',
+  PRESENTATION: 'PRESENTATION'
 } as const;
 
 export const MainMenuOptionsEnum = {

@@ -14,6 +14,7 @@ import { UiElement } from 'src/components/UiElement/UiElement';
 import { useScene } from 'src/hooks/useScene';
 import { TEXTBOX_DEFAULTS } from 'src/config';
 import { generateId } from 'src/utils';
+import { EditorModeEnum } from 'src/types';
 
 export const ToolMenu = () => {
   const { createTextBox } = useScene();
@@ -42,6 +43,34 @@ export const ToolMenu = () => {
       id: textBoxId
     });
   }, [uiStateStoreActions, createTextBox, mousePosition]);
+
+  if (uiStateStoreActions.getEditorMode() == EditorModeEnum.PRESENTATION) {
+      return (
+        <UiElement>
+          <Stack direction="row">
+          <IconButton
+              name="Pan"
+              Icon={<PanToolIcon />}
+              onClick={() => {
+                if (uiStateStoreActions.getMode() == 'INTERACTIONS_DISABLED') {
+                  uiStateStoreActions.setMode({
+                    type: 'PAN',
+                    showCursor: true,
+                  });
+                } else {
+                  uiStateStoreActions.setMode({
+                    type: 'INTERACTIONS_DISABLED',
+                    showCursor: false
+                  });
+                }
+                uiStateStoreActions.setItemControls(null);
+              }}
+              isActive={mode.type === 'PAN'}
+            />
+          </Stack>
+        </UiElement>
+      );
+    };
 
   return (
     <UiElement>

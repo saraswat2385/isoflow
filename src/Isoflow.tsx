@@ -20,6 +20,7 @@ const App = ({
   height = '100%',
   onModelUpdated,
   enableDebugTools = false,
+  showGrid = true,
   editorMode = 'EDITABLE'
 }: IsoflowProps) => {
   const uiStateActions = useUiStateStore((state) => {
@@ -56,6 +57,10 @@ const App = ({
   useEffect(() => {
     uiStateActions.setEnableDebugTools(enableDebugTools);
   }, [enableDebugTools, uiStateActions]);
+
+  useEffect(() => {
+    uiStateActions.setShowGrid(showGrid);
+  }, [showGrid, uiStateActions]);
 
   if (!initialDataManager.isReady) return null;
 

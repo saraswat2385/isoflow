@@ -63,7 +63,9 @@ export const Renderer = () => {
           left: 0
         }}
       >
+      {uiStateActions.isShowGrid() && (
         <Grid />
+      )}
       </Box>
       {mode.showCursor && (
         <SceneLayer>

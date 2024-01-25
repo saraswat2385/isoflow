@@ -21,6 +21,7 @@ const initialState = () => {
       iconCategoriesState: [],
       isMainMenuOpen: false,
       dialog: null,
+      showGrid: true,
       rendererEl: null,
       contextMenu: null,
       mouse: {
@@ -56,6 +57,18 @@ const initialState = () => {
         },
         setMode: (mode) => {
           set({ mode });
+        },
+        getMode: () => {
+          return get().mode.type;
+        },
+        setShowGrid: (showGrid) => {
+          set({ showGrid });
+        },
+        isShowGrid: () => {
+          return get().showGrid;
+        },
+        getEditorMode: () => {
+          return get().editorMode;
         },
         setDialog: (dialog) => {
           set({ dialog });

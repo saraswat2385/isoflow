@@ -14,4 +14,5 @@ export interface IsoflowProps {
   height?: number | string;
   enableDebugTools?: boolean;
   editorMode?: keyof typeof EditorModeEnum;
+  showGrid?: boolean;
 }

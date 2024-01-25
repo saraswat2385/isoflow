@@ -744,15 +744,15 @@ export const getFitToViewParams = (view: View, viewportSize: Size) => {
   const unprojectedBounds = getUnprojectedBounds(view);
   const zoom = clamp(
     Math.min(
-      viewportSize.width / unprojectedBounds.width,
-      viewportSize.height / unprojectedBounds.height
+      viewportSize.width / unprojectedBounds.width + 0.07,
+      viewportSize.height / unprojectedBounds.height + 0.07
     ),
     0,
     MAX_ZOOM
   );
   const scrollTarget: Coords = {
     x: (sortedCornerPositions.lowX + boundingBoxSize.width / 2) * zoom,
-    y: (sortedCornerPositions.lowY + boundingBoxSize.height / 2) * zoom
+    y: (sortedCornerPositions.lowY  + boundingBoxSize.height / 2) * zoom
   };
   const scroll = getTileScrollPosition(scrollTarget);
 

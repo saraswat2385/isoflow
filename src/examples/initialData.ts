@@ -65,7 +65,7 @@ export const initialData: InitialData = {
       name: 'Landside operations',
       icon: 'office',
       description:
-        '<p>This subsystem is aimed at serving passengers and maintenance of terminal buildings, parking facilities, and vehicular traffic circular drives. Passenger operations include baggage handling and tagging.</p>'
+        '<p>This <a href="http://google.com">subsystem</a> is aimed at serving passengers and maintenance of terminal buildings, parking facilities, and vehicular traffic circular drives. Passenger operations include baggage handling and tagging.</p>'
     },
     {
       id: 'e0462e01-8acd-461c-89a2-42c6a04d5f7f',

@@ -38,6 +38,7 @@ const EDITOR_MODE_MAPPING: EditorModeMapping = {
     'VIEW_TITLE'
   ],
   [EditorModeEnum.EXPLORABLE_READONLY]: ['ZOOM_CONTROLS', 'VIEW_TITLE'],
+  [EditorModeEnum.PRESENTATION]: ['ZOOM_CONTROLS', 'MAIN_MENU', 'TOOL_MENU'],
   [EditorModeEnum.NON_INTERACTIVE]: []
 };
 

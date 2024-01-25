@@ -71,7 +71,7 @@ export const RECTANGLE_DEFAULTS: Required<
 
 export const ZOOM_INCREMENT = 0.2;
 export const MIN_ZOOM = 0.2;
-export const MAX_ZOOM = 1;
+export const MAX_ZOOM = 2;
 export const TRANSFORM_ANCHOR_SIZE = 30;
 export const TRANSFORM_CONTROLS_COLOR = '#0392ff';
 export const INITIAL_DATA: InitialData = {
