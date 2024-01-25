@@ -92,15 +92,6 @@ export const ExportImageDialog = ({ onClose, quality = 1.5 }: Props) => {
       <DialogTitle>Export as image</DialogTitle>
       <DialogContent>
         <Stack spacing={2}>
-          <Alert severity="info">
-            <strong>
-              Certain browsers may not support exporting images properly.
-            </strong>{' '}
-            <br />
-            For best results, please use the latest version of either Chrome or
-            Firefox.
-          </Alert>
-
           {!imageData && (
             <>
               <Box
@@ -125,6 +116,7 @@ export const ExportImageDialog = ({ onClose, quality = 1.5 }: Props) => {
                 >
                   <Isoflow
                     editorMode="NON_INTERACTIVE"
+                    showGrid={false}
                     onModelUpdated={exportImage}
                     initialData={{
                       ...model,
