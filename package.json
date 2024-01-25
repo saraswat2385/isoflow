@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/markmanx/isoflow.git"
+    "url": "https://github.com/saraswat2385/isoflow.git"
   },
   "main": "./dist/index.js",
   "types": "./dist/Isoflow.d.ts",
