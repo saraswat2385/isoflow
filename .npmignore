@@ -1,0 +1,22 @@
+#tests
+.circleci
+.codesandbox
+.vscode
+docs/
+node_modules/
+src/
+webpack/
+
+#build tools
+.travis.yml
+.jenkins.yml
+.codeclimate.yml
+
+#linters
+.jscsrc
+.jshintrc
+.eslintrc*
+
+#editor settings
+.idea
+.editorconfig
