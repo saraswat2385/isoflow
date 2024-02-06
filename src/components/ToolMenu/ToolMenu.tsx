@@ -6,7 +6,8 @@ import {
   AddOutlined as AddIcon,
   EastOutlined as ConnectorIcon,
   CropSquareOutlined as CropSquareIcon,
-  Title as TitleIcon
+  Title as TitleIcon,
+  Download as DownloadIcon
 } from '@mui/icons-material';
 import { useUiStateStore } from 'src/stores/uiStateStore';
 import { IconButton } from 'src/components/IconButton/IconButton';
@@ -21,6 +22,7 @@ export const ToolMenu = () => {
   const mode = useUiStateStore((state) => {
     return state.mode;
   });
+  
   const uiStateStoreActions = useUiStateStore((state) => {
     return state.actions;
   });
@@ -67,6 +69,18 @@ export const ToolMenu = () => {
               }}
               isActive={mode.type === 'PAN'}
             />
+            <IconButton
+              name="Download PNG"
+              Icon={<DownloadIcon />}
+              onClick={() => {
+                uiStateStoreActions.setMode({
+                  type: 'INTERACTIONS_DISABLED',
+                  showCursor: false
+                });
+                uiStateStoreActions.setDialog('EXPORT_IMAGE');
+              }}
+          isActive={false}
+        />
           </Stack>
         </UiElement>
       );

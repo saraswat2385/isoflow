@@ -38,7 +38,7 @@ const EDITOR_MODE_MAPPING: EditorModeMapping = {
     'VIEW_TITLE'
   ],
   [EditorModeEnum.EXPLORABLE_READONLY]: ['ZOOM_CONTROLS', 'VIEW_TITLE'],
-  [EditorModeEnum.PRESENTATION]: ['ZOOM_CONTROLS', 'MAIN_MENU', 'TOOL_MENU'],
+  [EditorModeEnum.PRESENTATION]: ['ZOOM_CONTROLS', 'TOOL_MENU'],
   [EditorModeEnum.NON_INTERACTIVE]: []
 };
 
@@ -122,7 +122,7 @@ export const UiOverlay = () => {
           </UiElement>
         )}
 
-        {availableTools.includes('TOOL_MENU') && (
+        {availableTools.includes('TOOL_MENU') && editorMode != EditorModeEnum.PRESENTATION && (
           <Box
             sx={{
               position: 'absolute',
@@ -131,6 +131,21 @@ export const UiOverlay = () => {
             style={{
               left: rendererSize.width - appPadding.x,
               top: appPadding.y
+            }}
+          >
+            <ToolMenu />
+          </Box>
+        )}
+
+      {availableTools.includes('TOOL_MENU') && editorMode == EditorModeEnum.PRESENTATION && (
+          <Box
+            sx={{
+              position: 'absolute',
+              transform: 'translateX(-100%)'
+            }}
+            style={{
+              top: rendererSize.height - appPadding.y * 2,
+              left: appPadding.x + appPadding.y * 7 + 5
             }}
           >
             <ToolMenu />
